@@ -32,22 +32,18 @@ Do this:
 - $ airflow webserver -D
 
 ## Airflow_UI 
-- open port 8080: 
+- open port 8080 and use your ec2 host to access airflowUI 
 http://ec2-18-184-1-86.eu-central-1.compute.amazonaws.com:8080/admin/
 
 
 ## Python_Scripts_Description
 
-- json2csv.py
-- json to real estate data csv (timestamped) and removes json file after csv creation (we can move it to archive location if needed)
-- s3upload.py
-- s3upload.py uploads current csv file to s3 and removes it from local. Files are overwritten on S3 if already existing.
-- rs_upload.py
-- S3 to redshift, copy csv to redshift in staging table and moves csv file to archival bucket
-- rs_elt.py
-- Populates dim and fact tables from stage table on redshift.
-
-
+- [json2csv.py](json2csv.py) Json to real estate data csv (timestamped) and removes json file after csv creation (we can move it to archive location if needed)
+- [s3upload.py](s3upload.py) Uploads current csv file to s3 and removes it from local. Files are overwritten on S3 if already existing.
+- [rs_upload.py](rs_upload.py) S3 to redshift, copy csv to redshift in staging table and moves csv file to archival bucket
+- [rs_elt.py](rs_elt.py) Populates dim and fact tables from stage table on redshift.
+- [fileops.py](fileops.py) Common file operations.
+- [awsconfig.py](awsconfig.py) Redshift db and S3 credentials.
 
 ## Create Dag
 
