@@ -7,7 +7,9 @@ redshift = {'host': 'yourhost',
             'port': 5439
             }
 
-s3 = { 'key' : 'YourAccessKey',
-          'skey' : 'YourSecretKey',
-          'region' : 'eu-central-1'   
-          }
+s3c =  { 'key' : 'YourAccessKey',
+         'skey' : 'YourSecretKey',
+          'region' : 'eu-central-1',
+          'in_bucket': 'incoming-eu-bucket-2',
+          'arch_bucket': 'arch-eu-bucket-2'  
+        }
